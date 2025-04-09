@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+header {
+  background: #fd2c94;
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+nav {
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #ffcfdf;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.banner {
+  background-color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/banner1.jpeg');
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 2rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+}
+
+
+.promo-btn {
+  font-size: 15px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Overlay hitam */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 900;
+}
+
+.overlay.show {
+  display: block;
+}
+
+.close-btn {
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 300px;
+  display: none;
+}
+
+
+.close-btn:hover {
+  background-color: transparent;
+  color: #ffcfdf;
+}
+
+/* Responsive & slide from left */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background-color: #fd2c94;
+    position: fixed;
+    top: 0;
+    left: -400px;
+    width: 350px;
+    height: 100%;
+    padding: 4rem 1rem 1rem;
+    gap: 1rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1100;
+    position: relative;
+  }
+
+  .close-btn {
+    display: block;
+    color: black;
+    z-index: 1101;
+  }
+}
+
+/* SECTION PRODUK */
+.product-section {
+  padding: 4rem 2rem;
+  background-color: #fefefe;
+  text-align: center;
+}
+
+.product-tittle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Banner & Layout */
+.product-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Gambar Produk */
+.product-image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Info Produk */
+.product-info {
+  max-width: 500px;
+  text-align: left;
+}
+
+.product-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.product-info p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+/* Tombol */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: #fd2c94;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #d81a7f;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .product-banner {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .product-info {
+    text-align: center;
+  }
+}
+
+/* ======= Handtied Detail Style ======= */
+
+.product-detail {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.product-detail h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fd2c94;
+}
+
+.detail-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.product-detail p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.btn.btn-primary {
+  display: inline-block;
+  background-color: #fd2c94;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn.btn-primary:hover {
+  background-color: #e01c7a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .product-detail h1 {
+    font-size: 2rem;
+  }
+
+  .btn.btn-primary {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
