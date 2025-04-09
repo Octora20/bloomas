@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vase Arrangement - Blooma</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .product-image-container {
+      position: relative;
+      flex: 1;
+      text-align: center;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .arrow-btn:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .arrow-btn.left {
+      left: 10px;
+    }
+
+    .arrow-btn.right {
+      right: 10px;
+    }
+
+    .detail-image {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .product-text {
+      flex: 1;
+    }
+
+    .btn.btn-primary {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #25D366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn.btn-primary:hover {
+      background-color: #1ebe5b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu Navigasi -->
+  <header>
+    <div class="logo">Blooma</div>
+    <nav>
+      <ul class="nav-links">
+        <div class="close-btn">&times;</div>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bouquet-artificial.html">Bouquet Artificial</a></li>
+        <li><a href="vase-arrangement.html">Vase Arrangement</a></li>
+        <li><a href="hand-tied.html">Handtied</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <div class="overlay"></div>
+
+  <!-- Konten Vase Arrangement -->
+  <main>
+    <section class="product-detail">
+      <div class="product-image-container">
+        <button onclick="changeImage(-1)" class="arrow-btn left">&#10094;</button>
+        <img id="motorImage" src="img/vase2.jpg" alt="Vase Arrangement" class="detail-image" />
+        <button onclick="changeImage(1)" class="arrow-btn right">&#10095;</button>
+      </div>
+      <div class="product-text">
+        <h1>Vase Arrangement</h1>
+        <p>
+          Vase arrangement adalah rangkaian bunga yang disusun dalam vas, menciptakan tampilan yang anggun dan tertata.
+          Cocok untuk dekorasi rumah, meja kerja, acara formal, ataupun hadiah elegan bagi orang tersayang.
+        </p>
+        <p>
+          Di <strong>Blooma</strong>, vase arrangement kami dirancang dengan perpaduan warna yang harmonis dan bunga-bunga segar pilihan.
+          Tersedia berbagai desain dari minimalis modern hingga klasik elegan.
+        </p>
+        <p>
+          Pilihan ukuran dan desain dapat disesuaikan. Kamu bisa memesan langsung atau request custom lewat WhatsApp.
+        </p>
+        <a href="https://wa.me/6285735718201" class="btn btn-primary">
+          <i class="fab fa-whatsapp"></i> Pesan Sekarang via WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>
+    const motorImages = [
+      'img/vase1.jpg',
+      'img/vase2.jpg',
+      'img/vase3.jpg',
+    ];
+
+    let currentImageIndex = 0;
+    const motorImage = document.getElementById('motorImage');
+
+    function changeImage(direction) {
+      currentImageIndex += direction;
+      if (currentImageIndex < 0) currentImageIndex = motorImages.length - 1;
+      if (currentImageIndex >= motorImages.length) currentImageIndex = 0;
+
+      motorImage.src = motorImages[currentImageIndex];
+    }
+  </script>
+</body>
+</html>
